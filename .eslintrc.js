@@ -5,9 +5,17 @@ module.exports = {
     es2021: true,
   },
   extends: ["eslint:recommended", "prettier"],
-  overrides: [],
+  ignorePatterns: ["jest.config.js"],
+  overrides: [
+    {
+      files: ["**/*.test.js"],
+      env: {
+        jest: true,
+      },
+    },
+  ],
   parserOptions: {
-    ecmaVersion: "latest",
+    sourceType: "module",
   },
   plugins: ["prettier"],
   rules: {

@@ -1,5 +1,3 @@
 module.exports = {
-    '**/*.js': [
-      "eslint --cache --fix",
-    ]
-  }
+  "**/*.js": ["eslint --cache --fix"],
+};

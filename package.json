@@ -4,7 +4,7 @@
   "description": "warm up with data structure and algorithm",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node --experimental-vm-modules ./node_modules/.bin/jest",
     "prepare": "husky install"
   },
   "repository": {
@@ -25,12 +25,17 @@
   },
   "homepage": "https://github.com/katesroad/javascript-data-structure#readme",
   "devDependencies": {
+    "@babel/core": "^7.20.5",
+    "@babel/plugin-transform-modules-commonjs": "^7.19.6",
+    "@babel/preset-env": "^7.20.2",
+    "babel-jest": "^29.3.1",
     "eslint": "^8.29.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.2",
+    "jest": "^29.3.1",
     "lint-staged": "^13.1.0",
     "prettier": "^2.8.1"
   }
