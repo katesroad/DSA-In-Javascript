@@ -17,11 +17,21 @@ module.exports = {
   parserOptions: {
     sourceType: "module",
   },
-  plugins: ["prettier"],
+  plugins: ["import", "prettier"],
   rules: {
-    "max-len": ["error", { code: 120 }],
-    "prettier/prettier": "error",
     "arrow-body-style": "off",
+    "import/newline-after-import": ["error", { count: 1 }],
+    "max-len": ["error", { code: 120 }],
+    "padding-line-between-statements": [
+      "error",
+      { blankLine: "always", prev: "while", next: "*" },
+      { blankLine: "always", prev: "if", next: "*" },
+      { blankLine: "always", prev: "*", next: "if" },
+      { blankLine: "always", prev: "*", next: "return" },
+      { blankLine: "always", prev: "*", next: "while" },
+      { blankLine: "always", prev: "*", next: "function" },
+    ],
     "prefer-arrow-callback": "off",
+    "prettier/prettier": "error",
   },
 };
