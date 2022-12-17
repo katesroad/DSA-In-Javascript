@@ -30,6 +30,8 @@ module.exports = {
       { blankLine: "always", prev: "*", next: "return" },
       { blankLine: "always", prev: "*", next: "while" },
       { blankLine: "always", prev: "*", next: "function" },
+      { blankLine: "always", prev: "*", next: "for" },
+      { blankLine: "always", prev: "for", next: "*" },
     ],
     "prefer-arrow-callback": "off",
     "prettier/prettier": "error",
