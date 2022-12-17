@@ -10,7 +10,7 @@ export function sameFrequency(num1, num2) {
 
   for (let i = 0, len = num1Array.length; i < len; i++) {
     const currrentNumber = num1Array[i];
-    const currentNumerFrequency = num1TrackMap.get(currrentNumber) ?? 1;
+    const currentNumerFrequency = num1TrackMap.get(currrentNumber) ?? 0;
 
     num1TrackMap.set(currrentNumber, currentNumerFrequency + 1);
   }
