@@ -1,25 +1,23 @@
-export const uniqueCounts = (array) => {
-  if (array.length === 0) {
-    return 0;
+export const findLargestSum = (array, number) => {
+  if (array.length < number) {
+    return;
   }
 
-  let count = 1;
+  let maxSum = 0;
+  let tempSum = maxSum;
 
-  let startIndex = 0;
-  const endIndex = array.length - 1;
-  let currentIndex = 1;
-
-  while (currentIndex <= endIndex) {
-    const startValue = array[startIndex];
-    const comparedValue = array[currentIndex];
-
-    if (startValue !== comparedValue) {
-      count++;
-      startIndex = currentIndex;
-    }
-
-    currentIndex++;
+  for (let i = 0; i < number; i++) {
+    maxSum += array[i];
   }
 
-  return count;
+  for (let i = number, len = array.length; i < len; i++) {
+    // curValue = array[i];
+    // prevFirstValue = array[i - number]
+    // newly added value = curValue - prevFirstValue
+    tempSum = maxSum + (array[i] - array[i - number]);
+
+    maxSum = Math.max(tempSum, maxSum);
+  }
+
+  return maxSum;
 };

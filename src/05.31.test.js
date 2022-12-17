@@ -1,19 +1,17 @@
-import { uniqueCounts } from "./05.31";
+import { findLargestSum } from "./05.31";
 
-describe("uniqueCounts", () => {
-  it("empty array", () => {
-    expect(uniqueCounts([])).toBe(0);
+describe("search", () => {
+  it("expect return undefined for array with less than required items", () => {
+    const array = [1];
+    const size = 2;
+
+    expect(findLargestSum(array, size)).toBe(undefined);
   });
 
-  it("duplicated values in array", () => {
-    const array = [1, 2, 3, 3, 4, 5, 66];
+  it("expect return biggest sum value", () => {
+    const array = [1, 2, 9, 10, -10, 0];
+    const size = 3;
 
-    expect(uniqueCounts(array)).toBe(6);
-  });
-
-  it("unique array", () => {
-    const array = [1, 2, 3, 4];
-
-    expect(uniqueCounts(array)).toBe(4);
+    expect(findLargestSum(array, size)).toBe(21);
   });
 });
