@@ -1,3 +1,4 @@
+// 434
 export const debounce = (fn, delay) => {
   let timer = undefined;
 
@@ -10,6 +11,7 @@ export const debounce = (fn, delay) => {
   };
 };
 
+// 435
 export const throttle = (fn, limit) => {
   let isInThrottle;
 
