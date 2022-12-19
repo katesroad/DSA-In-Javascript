@@ -1,4 +1,4 @@
-export const debounce = (fn, delay = 500) => {
+export const debounce = (fn, delay) => {
   let timer = undefined;
 
   return function (...args) {
@@ -7,5 +7,21 @@ export const debounce = (fn, delay = 500) => {
     timer = setTimeout(() => {
       fn.apply(this, args);
     }, delay);
+  };
+};
+
+export const throttle = (fn, limit) => {
+  let isInThrottle;
+
+  return (...args) => {
+    if (!isInThrottle) {
+      isInThrottle = true;
+
+      fn.apply(this, args);
+
+      setTimeout(() => {
+        isInThrottle = false;
+      }, limit);
+    }
   };
 };
