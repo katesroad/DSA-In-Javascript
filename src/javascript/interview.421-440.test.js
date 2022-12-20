@@ -1,4 +1,4 @@
-import { debounce, throttle } from "./421-440";
+import { debounce, throttle } from "./interview.421-440";
 
 beforeAll(() => {
   jest.useFakeTimers();
