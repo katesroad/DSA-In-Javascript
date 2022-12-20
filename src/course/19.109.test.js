@@ -76,44 +76,69 @@ describe("Singly Linked List", () => {
       messageList.push(secondMessage);
 
       const node = messageList.get(1);
+
       expect(node.value).toBe(secondMessage);
     });
   });
 
-  describe("set", () => {
-    it("set item for empty list", () => {
+  describe("insert", () => {
+    it("insert item for empty list", () => {
       const messageList = new LinkedList();
-      messageList.set(0, firstMessage);
+
+      messageList.insert(0, firstMessage);
 
       expect(messageList.length).toBe(1);
       expect(messageList.head).toEqual(messageList.head);
     });
 
-    it("set message at head", () => {
+    it("insert value at head", () => {
       const messageList = new LinkedList();
-      messageList.push(firstMessage).push(secondMessage);
 
-      messageList.set(0, "!");
+      messageList.push(firstMessage).push(secondMessage);
+      messageList.insert(0, "!");
 
       expect(messageList.head.value).toBe("!");
     });
 
-    it("set message at tail", () => {
+    it("insert value at tail", () => {
       const messageList = new LinkedList();
-      messageList.push(firstMessage).push(secondMessage);
 
-      messageList.set(2, "!");
+      messageList.push(firstMessage).push(secondMessage);
+      messageList.insert(2, "!");
 
       expect(messageList.tail.value).toBe("!");
     });
 
-    it("set message within list", () => {
+    it("insert value within list", () => {
       const messageList = new LinkedList();
-      messageList.push(firstMessage).push(secondMessage);
 
-      messageList.set(1, "!");
+      messageList.push(firstMessage).push(secondMessage);
+      messageList.insert(1, "!");
 
       expect(messageList.get(1).value).toBe("!");
+    });
+  });
+
+  describe("set", () => {
+    it("set value at an exisiting index", () => {
+      const messageList = new LinkedList();
+
+      messageList.push(firstMessage);
+      messageList.set(0, secondMessage);
+
+      expect(messageList.get(0).value).toBe(secondMessage);
+    });
+
+    it("set value at  not exisiting index", () => {
+      const messageList = new LinkedList();
+
+      messageList.push(firstMessage);
+
+      // Expect test case to throw error in Jest
+      // https://jestjs.io/docs/expect#tothrowerror
+      expect(() => {
+        messageList.set(10, secondMessage);
+      }).toThrowError("Referencing a position doesnt exisit");
     });
   });
 });

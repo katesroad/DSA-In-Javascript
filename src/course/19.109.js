@@ -64,8 +64,8 @@ export class LinkedList {
     return tail;
   }
 
-  push(message) {
-    const newNode = new Node(message);
+  push(value) {
+    const newNode = new Node(value);
 
     if (this.isEmpty()) {
       this.head = newNode;
@@ -80,12 +80,24 @@ export class LinkedList {
     return this;
   }
 
-  set(index, message) {
+  set(index, value) {
+    const foundNode = this.get(index);
+
+    if (foundNode) {
+      foundNode.value = value;
+    } else {
+      throw new Error("Referencing a position doesnt exisit");
+    }
+
+    return this;
+  }
+
+  insert(index, value) {
     if (this.length && this.length < index) {
       return this;
     }
 
-    const newNode = new Node(message);
+    const newNode = new Node(value);
 
     if (this.isEmpty()) {
       this.head = newNode;
@@ -149,8 +161,8 @@ export class LinkedList {
     return node;
   }
 
-  unshift(message) {
-    const newNode = new Node(message);
+  unshift(value) {
+    const newNode = new Node(value);
 
     if (this.isEmpty()) {
       this.head = newNode;
