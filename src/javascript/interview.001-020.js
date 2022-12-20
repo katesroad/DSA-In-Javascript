@@ -37,3 +37,20 @@ invitedPerson("hello", "how are you");
   eat();
   eat();
 }
+
+// 15 curry in javascript
+
+{
+  const curryUnaryFunction = (a) => (b) => (c) => a + b + c;
+
+  curryUnaryFunction(1); // returns a function: b => c =>  1 + b + c
+  curryUnaryFunction(1)(2); // returns a function: c => 3 + c
+  curryUnaryFunction(1)(2)(3); // returns the number 6
+}
+
+// 16: Pure function, input => output, && doesn't influence its external env
+
+// 17: let vs var
+// var, scope elevation
+// let, block scope
+// salary = 130000$/year vs let salary = 130000$/year
