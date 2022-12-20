@@ -99,42 +99,18 @@ export class LinkedList {
 
     const newNode = new Node(value);
 
-    if (this.isEmpty()) {
-      this.head = newNode;
-      this.tail = newNode;
-
-      this.length++;
-
-      return this;
-    }
-
     if (index === 0) {
-      newNode.next = this.head.next;
-      this.head = newNode;
-
-      this.length++;
-
-      return this;
+      return this.unshift(value);
     }
 
-    // index range: 0 ~ this.length;
-
-    let prevNode = this.head;
-    let current = 0;
-
-    while (current < index - 1) {
-      prevNode = prevNode.next;
-
-      current++;
+    if (index === this.length) {
+      return this.push(value);
     }
+
+    const prevNode = this.get(index - 1);
 
     newNode.next = prevNode.next;
     prevNode.next = newNode;
-
-    if (index === this.length) {
-      this.tail = newNode;
-      this.tail.next = null;
-    }
 
     this.length++;
 
