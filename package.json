@@ -4,7 +4,7 @@
   "description": "warm up with data structure and algorithm",
   "main": "index.js",
   "scripts": {
-    "test": "node --experimental-vm-modules ./node_modules/.bin/jest --watch ./src",
+    "test": "node --experimental-vm-modules ./node_modules/.bin/jest --env=jsdom --watch ./src",
     "prepare": "husky install",
     "format": "npx prettier --write ."
   },
@@ -38,6 +38,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.2",
     "jest": "^29.3.1",
+    "jest-environment-jsdom": "^29.3.1",
     "lint-staged": "^13.1.0",
     "prettier": "^2.8.1",
     "yarn": "^1.22.19"
