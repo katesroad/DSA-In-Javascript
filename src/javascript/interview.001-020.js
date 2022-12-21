@@ -5,6 +5,7 @@ const firstPerson = {
 };
 
 function sendInvite(greeting1, greeting2) {
+  // eslint-disable-next-line no-console
   console.info(
     `${greeting1} ${this.name}  ${greeting2} ? welcome join in ${this.occupation} family`
   );
@@ -30,6 +31,7 @@ invitedPerson("hello", "how are you");
   }
 
   const eat = after(3, () => {
+    // eslint-disable-next-line no-console
     console.log("Finished Meal");
   });
 
