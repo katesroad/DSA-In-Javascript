@@ -141,4 +141,27 @@ describe("Singly Linked List", () => {
       }).toThrowError("Referencing a position doesnt exisit");
     });
   });
+
+  describe.only("reverse", () => {
+    it("list with one item", () => {
+      const messageList = new LinkedList().push(firstMessage);
+
+      messageList.reverse();
+
+      expect(messageList.tail).toEqual(messageList.head);
+    });
+
+    it.only("list with two item", () => {
+      const messageList = new LinkedList();
+
+      messageList.push("a");
+      messageList.push("b");
+      messageList.push("c");
+      messageList.push("d");
+
+      messageList.reverse();
+
+      expect(messageList.get(2).value).toBe("b");
+    });
+  });
 });

@@ -80,6 +80,30 @@ export class LinkedList {
     return this;
   }
 
+  reverse() {
+    if (this.isEmpty() || this.length === 1) {
+      return this;
+    }
+
+    let cur = this.head;
+    let next = null;
+    let prev = null;
+
+    this.head = this.tail;
+    this.tail = cur;
+
+    // cur = b;
+    for (let i = 0; i < this.length; i++) {
+      next = cur.next;
+
+      cur.next = prev;
+      prev = cur;
+      cur = next;
+    }
+
+    return this;
+  }
+
   set(index, value) {
     const foundNode = this.get(index);
 
@@ -157,9 +181,9 @@ export class LinkedList {
     let current = this.head;
 
     while (current) {
-      if (current) {
-        current = current.next;
-      }
+      current = current.next;
     }
+
+    return this;
   }
 }
