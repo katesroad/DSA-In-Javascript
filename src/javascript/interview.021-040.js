@@ -24,3 +24,11 @@ document.cookie;
 // expiration time
 // cookie.js
 // protocals about setting cookie on server side
+export function parseCookie() {
+  return document.cookie.split("; ").reduce((acc, cur) => {
+    const [name, value] = cur.split("=");
+    acc[name] = decodeURIComponent(value);
+
+    return acc;
+  }, {});
+}
