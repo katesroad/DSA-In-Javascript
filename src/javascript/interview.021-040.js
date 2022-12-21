@@ -1,3 +1,4 @@
+//  24, what is memoization
 export const memoizAddition = () => {
   const cache = {};
 
@@ -15,3 +16,11 @@ export const memoizAddition = () => {
     }
   };
 };
+
+// 28 ~ 30 module
+
+// cookie
+document.cookie;
+// expiration time
+// cookie.js
+// protocals about setting cookie on server side
