@@ -20,6 +20,7 @@ module.exports = {
   plugins: ["import", "prettier"],
   rules: {
     "arrow-body-style": "off",
+    "no-console": "error",
     "import/newline-after-import": ["error", { count: 1 }],
     "max-len": ["error", { code: 120 }],
     "padding-line-between-statements": [
